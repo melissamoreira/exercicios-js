@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <form onsubmit="return false">
+            <label>Digite seu nome: </label>
+            <input type="text" name="campo" id="campo">
+            <button id="botao" onclick="ex01()">Enviar</button>
+        </form>
+        
+        <br><br>
+        
+        <div> :) </div>
+        
+        
+        <script>
+        
+        
+            /*
+              EXERCICIO #1: Faca um campo Nome (input) e um botao Enviar. 
+              Ao clicar em Enviar é mostrado, via alert, 'Ola' e o nome digitado e
+              também o botao devera ter o mudado para Limpar.
+              Clickando no botao limpar, alem de limpar o campo o botao deve ser mudado Enviar novamente. */
+            
+            
+            function ex01(){
+
+                var botao = document.querySelector("#botao");
+                var campo = document.querySelector("#campo");
+                var nome = campo.value; 
+
+                if (botao.innerHTML == "Limpar"){
+
+                    campo.value = "";
+                    botao.innerHTML = "Enviar";
+
+                } else {
+                    if (nome == "") {
+                            
+                        alert("Digite seu nome no campo!");
+                    } else {
+
+                        alert("Ola, "+ nome);
+                        botao.innerHTML = "Limpar";
+                        
+                    }
+                }
+            }
+            
+            //======================================
+            //Exercício #2: Faça um DIV 'blinkante'
+            //======================================
+            
+            function ex02(){
+
+                var div = document.querySelector("div");
+                div.style.backgroundColor = "#fff";
+
+                var blink = function (){
+                
+                    if ( div.style.backgroundColor == "cyan" ){
+                
+                        div.style.backgroundColor = "#fff";
+                
+                    } else {
+                
+                        div.style.backgroundColor = "cyan";                        
+                    }
+                };
+                setInterval(blink,500);
+            }
+            
+            ex02();
+            
+        </script>
+    </body>
+</html>

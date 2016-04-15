@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercicio #5</title>
+        <style>
+            td{
+                padding: 5px 5px 5px 5px;
+                background-Color: #cec;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+        
+        /* Faca uma funcao que receba um vetor de cotação de ações dos ultimos dias da seguinte forma:
+        
+        [{id : "PETR4", valores : [3.2,3.5,3.8,4.1,3.5]},
+         {id : "VALE5", valores : [10.85,10.54,10.77]},
+         {id : "SBUX", valores : [22.55,23,23.20,23,22.80,22.77]}
+         {id : "MSFT", valores : [100,100.20,102.77,101.55]}]
+         
+        Mostre a media dos valores das empresas e seu nome em forma tabela. */
+        
+        
+        //Foi criada uma funcao chamar() para que vetCot nao seja uma variavel global.
+        //Portanto a funcao abaixo declara um vetor de objetos 'vetCot' e chama a funcao ex05() com esse vetor de parametro
+        function chamar(){
+            
+            
+            var vetCot = [ { id:"PETR4" , valores:[3.2, 3.5, 3.8, 4.1, 3.5] },
+                           { id:"VALE5" , valores:[10.85, 10.54, 10.77] },
+                           { id:"SBUX" , valores:[22.55, 23, 23.20, 23, 22.80, 22.77] },
+                           { id:"MSFT" , valores:[100, 100.20, 102.77, 101.55]} ];
+            
+            ex05(vetCot);           
+        }
+        
+        
+        function ex05(vet){
+        
+            var table = document.createElement('table');
+            var tabela = "<thead><th> ID </th><th> Média </th></thead><tbody>";
+            var total=vet.length;
+        
+            for (var i=0; i<total; i++){
+        
+                tabela += "<tr> <td>"+ vet[i].id +"</td>";
+                var cotacao = vet[i].valores;
+                var cotacaoTam = cotacao.length;
+                var soma = 0;
+                var x = 0;
+        
+                while(x<cotacaoTam){
+        
+                    soma += parseFloat(cotacao[x]);
+                    x++;
+                }
+        
+                var media = (soma/cotacaoTam).toFixed(2);
+                tabela += "<td>"+ media +"</td></tr>";
+                
+            }
+        
+            tabela += "</tbody>";
+            table.innerHTML = tabela;
+            table.style.backgroundColor = "#555";
+            table.firstChild.style.color = "#fff";
+            document.body.appendChild(table);
+        }
+        
+        chamar();
+        
+        </script>
+    </body>
+</html>    
+

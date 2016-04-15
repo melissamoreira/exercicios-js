@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercicio #04</title>
+    </head>
+    <body>
+        
+        <form name="formulario" onsubmit="return false">
+            <label>Digite um número: </label>
+            <input type="number" name="num"/>
+            <button onclick="ex04()">OK</button>
+        </form>
+        
+    
+        <script>
+        /* 
+        Exercício #04:
+        Faca uma funcao que recebe uma inteiro n e a partir dele monta n divs de cores de fundo
+        alternados entre red, green, blue e yellow. 
+        */
+        
+        function ex04(){
+            
+            var num = document.forms.formulario.num.value;
+            for(var i=0; i<num; i++){
+                        
+                var div = document.createElement("div");
+                div.style.width  = "100px";
+                div.style.height = "100px";
+
+                switch(i%4){
+
+                        case 0:
+                        div.style.backgroundColor = "red";
+                        break;
+
+                        case 1:
+                        div.style.backgroundColor = "green";
+                        break;
+
+                        case 2:
+                        div.style.backgroundColor = "blue";
+                        break;
+
+                        case 3:
+                        div.style.backgroundColor = "yellow";
+                        break;
+                }
+             
+                document.body.appendChild(div);
+            }
+        }   
+            
+        </script>    
+        
+    </body>
+</html>    

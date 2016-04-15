@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Exercício #03 | Simulado JS (04/2016)</title>
+        <style></style>
+    </head>
+    <body>
+        <form name="formulario">
+          <label>Digite um número: </label><br>
+          <input type="number" name="numero" />
+          </form>
+        
+        <script>
+            /*
+            Exercício #03
+            =============
+            Os eventos onfocus e onblur representam a ação foco (em uma caixa de texto, por exemplo) e a ação de desfocar.
+            Umn número deve ser digitado em uma caixa de texto. Ao focar na caixa, sua cor de fundo (background) deve ficar da cor amarela. 
+            Ao sair da caixa (desfocar), a cor de fundo deve ficar verde se o número for par e azul se o número for ímpar. */
+            
+            function ex03(){
+
+                 var form = document.forms.formulario;
+                 var campo = form[0];
+      			 campo.onfocus = function(){
+            		
+            		campo.style.backgroundColor = "#ff0";
+                    campo.onblur = function(){
+                    
+                      if (campo.value!=""){
+                    
+                          if(campo.value %2 == 0){
+                    
+                            campo.style.backgroundColor = "#0f0";
+                          } else {
+                    
+                            campo.style.backgroundColor = "#44f";
+                          }
+                      } else {
+                    
+                        campo.style.backgroundColor = "#fff";
+                      }
+            		}	
+                 }		
+            }
+            
+            ex03();
+            
+            
+            
+        </script>
+    </body>
+</html>

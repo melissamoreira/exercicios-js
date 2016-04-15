@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Exercício #01 | Simulado JS (04/2016)</title>
+        <style>
+            table, td { border: 1px solid #ccc; text-align: center; }
+            span { font-weight: bold; }
+        </style>
+    </head>
+    <body>
+        <script>
+        /*
+        Exercício #01
+        =============
+        Um objeto cliente possui campos nome, idade e salario.
+        Um exemplo de objeto é: { nome:"Pedro", idade:29, salario: 2000 }.
+        Faça uma função que receba um vetor de clientes e imprima no documento, em forma de tabela (tag table), 
+        todas as informações deste cliente. A função deve informar também a idade média e a soma total dos salários. */
+        
+           function ex01(){
+              
+               var clientes = [
+                   {nome:"Michael", idade:47, salario:2500},
+                   {nome:"Jim", idade:28, salario:1800},
+                   {nome:"Pam", idade:26, salario:1800},
+                   {nome:"Dwight", idade:32, salario:1800} ];
+              
+               exercicioB(clientes);
+            }
+            
+            //============
+            //  Versão A  
+            //============
+            function exercicioA(vet){
+              var tabela = "<table><thead><th> Nome </th><th> Idade </th><th> Salário </th></thead><tbody>";
+              var somaSalarios = 0;
+              var idades = 0;
+              
+              for (var i=0, total=vet.length; i<total; i++ ){
+              
+                somaSalarios += vet[i].salario;
+                idades += vet[i].idade;
+                tabela += "<tr><td>"+ vet[i].nome +"</td><td>"+ vet[i].idade +"</td><td>"+ vet[i].salario +"</td></tr>";   
+                
+              }
+
+              var mediaIdades = parseInt(idades/vet.length);
+              tabela += "</tbody></table>";
+              var p = document.createElement('p');
+              p.innerHTML = "A média de idades é igual a <span>"+ mediaIdades +"</span> e a soma de todos os salários resulta em <span>R$"+ somaSalarios +"</span>";
+              document.write(tabela);
+              document.body.appendChild(p);
+            }
+            
+            
+            //============
+            //  Versão B  
+            //============
+            function exercicioB(vet){
+              var t = document.createElement('table');
+              var tabela = "<thead><th> Nome </th><th> Idade </th><th> Salário </th></thead><tbody>";
+              var somaSalarios = 0;
+              var idades = 0;
+              
+              for (var i=0, total=vet.length; i<total; i++ ){
+                
+                somaSalarios += vet[i].salario;
+                idades += vet[i].idade;
+                tabela += "<tr><td>"+ vet[i].nome +"</td><td>"+ vet[i].idade +"</td><td>"+ vet[i].salario +"</td></tr>";   
+                
+              }
+              
+              var mediaIdades = parseInt(idades/vet.length);
+              tabela += "</tbody>";
+              t.innerHTML = tabela;
+              var p = document.createElement('p');
+              p.innerHTML = "A média de idades é igual a <span>"+ mediaIdades +"</span> e a soma de todos os salários resulta em <span>R$"+ somaSalarios +"</span>";
+              document.body.appendChild(t);
+              document.body.appendChild(p);
+            }
+       
+            ex01();
+            
+        </script>
+    </body>
+</html>

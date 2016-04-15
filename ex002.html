@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Exercício #02 | Simulado JS (04/2016)</title>
+        <style>div { margin: 2px; }</style>
+    </head>
+    <body>
+        <p>Esse é um parágrafo!</p>
+        <p>Esse é outro parágrafo!</p>
+        <p>Eita! Mais um.</p>
+        
+        <div>Tá, agora é uma div!</div>
+        <div>Outra div.</div>
+        <div>E mais uma div, PORQUE SIM!</div>
+        
+        <br><br>
+        
+        <button id="b1">AGORA CLICA AQUI! :)</button>
+        
+        <script>
+            /*
+            Exercício #02
+            =============
+            Implemente uma função que é disparada ao clicar num botão de id b1.
+            Esta função faz com que os elementos p fiquem com o fundo azul e as divs com o fundo vermelho.
+            Use apenas querySelectorAll. */
+            
+            function ex02(){
+                
+              var botao = document.querySelector('#b1');
+              botao.onclick = function(){    
+                  
+                var ps = document.querySelectorAll('p');
+                var divs = document.querySelectorAll('div');
+                
+                for (var i=0; i<ps.length; i++){
+                  ps[i].style.backgroundColor = "#00f";      
+                }
+                
+                var x=0;
+                while( x < divs.length ){
+                    
+                  divs[x].style.backgroundColor = "#f00";
+                  x++;
+                }
+                
+              };
+            }
+            ex02();
+            
+        </script>
+    </body>
+</html>
