@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Exercicio #3</title>
-        <style>
-            p {
-                font-size: 1.5em;
-            }
-        </style>
-    </head>
-    <body>
-            <script>
-            
+
             /* Faca uma funcao que receba um vetor de Strings
             via parametro e monte uma página contendo essas strings
             dentro de uma div para cada uma.    */
@@ -42,9 +29,4 @@
                 }
             }
             teste();
-            
-            
-        </script>
-    </body>
-</html>    
-
+       
