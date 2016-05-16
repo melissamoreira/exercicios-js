@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Exercício #04 | Simulado JS (04/2016)</title>
-        <style>
-            body { margin: 0 0 0 0;}
-            div {height: 30px; background-color: #aaa;}
-        </style>
-    </head>
-    <body>
-        <div></div>
-        <script>
+
             /*
             Exercício #04
             =============
@@ -63,11 +51,4 @@
             }
             
             ex04b();
-            
-        </script>
-    </body>
-</html>
-        
-        
-            
-            
+         
